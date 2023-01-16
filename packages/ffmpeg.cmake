@@ -25,7 +25,6 @@ ExternalProject_Add(ffmpeg
         aom
         dav1d
         uavs3d
-        davs2
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
     SOURCE_DIR ${SOURCE_LOCATION}
     GIT_SHALLOW 1
