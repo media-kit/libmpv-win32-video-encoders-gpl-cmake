@@ -1,10 +1,8 @@
 set_property(DIRECTORY PROPERTY EP_STEP_TARGETS download)
 list(APPEND ep
-    gmp
     xz
     lzo
     uchardet
-    rubberband
     zlib
     bzip2
     libjpeg
@@ -16,15 +14,7 @@ list(APPEND ep
     speex
     libmodplug
     libvpx
-    xvidcore
-    game-music-emu
     libpng
-    x264
-    x265
-    libdvdcss
-    libdvdread
-    libdvdnav
-    libiconv
     luajit
     openal-soft
     fribidi
@@ -33,7 +23,6 @@ list(APPEND ep
     libarchive
     freetype2
     libudfread
-    libbluray
     harfbuzz
     libsoxr
     graphengine
@@ -41,17 +30,14 @@ list(APPEND ep
     fontconfig
     libunibreak
     libass
-    mbedtls
     libxml2
     libvpl
     amf-headers
-    avisynth-headers
     nvcodec-headers
     libmysofa
     aom
     dav1d
     libwebp
-    vapoursynth
     libbs2b
     libssh
     libsdl2
@@ -61,7 +47,6 @@ list(APPEND ep
     highway
     libjxl
     uavs3d
-    davs2
     ffmpeg
     angle-headers
     mujs
