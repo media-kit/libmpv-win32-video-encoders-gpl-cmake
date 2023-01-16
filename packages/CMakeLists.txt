@@ -15,6 +15,7 @@ list(APPEND ep
     libmodplug
     libvpx
     libpng
+    libiconv
     luajit
     openal-soft
     fribidi
