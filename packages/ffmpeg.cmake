@@ -4,13 +4,10 @@ ExternalProject_Add(ffmpeg
         avisynth-headers
         nvcodec-headers
         bzip2
-        gmp
         lame
-        mbedtls
         libssh
         libsrt
         libass
-        libbluray
         libmodplug
         libpng
         libsoxr
@@ -22,16 +19,12 @@ ExternalProject_Add(ffmpeg
         opus
         speex
         vorbis
-        x264
-        x265-10bit
-        xvidcore
         libxml2
         libvpl
         libopenmpt
         libjxl
         aom
         dav1d
-        vapoursynth
         uavs3d
         davs2
     GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
@@ -47,15 +40,8 @@ ExternalProject_Add(ffmpeg
         --pkg-config-flags=--static
         --enable-cross-compile
         --enable-runtime-cpudetect
-        --enable-gpl
-        --enable-version3
-        --enable-nonfree
         --enable-postproc
-        --enable-avisynth
-        --enable-vapoursynth
-        --enable-gmp
         --enable-libass
-        --enable-libbluray
         --enable-libfreetype
         --enable-libfribidi
         --enable-libmodplug
@@ -68,15 +54,9 @@ ExternalProject_Add(ffmpeg
         --enable-libbs2b
         --enable-libvpx
         --enable-libwebp
-        --enable-libx264
-        --enable-libx265
         --enable-libaom
-        --enable-libdav1d
-        --enable-libdavs2
         --enable-libuavs3d
-        --enable-libxvid
         --enable-libzimg
-        --enable-mbedtls
         --enable-libxml2
         --enable-libmysofa
         --enable-libssh

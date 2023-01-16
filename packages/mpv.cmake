@@ -6,13 +6,9 @@ ExternalProject_Add(mpv
         lcms2
         libarchive
         libass
-        libdvdnav
-        libdvdread
-        libiconv
         libjpeg
         libpng
         luajit
-        rubberband
         uchardet
         openal-soft
         mujs
@@ -20,8 +16,6 @@ ExternalProject_Add(mpv
         shaderc
         libplacebo
         spirv-cross
-        vapoursynth
-        libsdl2
     GIT_REPOSITORY https://github.com/mpv-player/mpv.git
     SOURCE_DIR ${SOURCE_LOCATION}
     UPDATE_COMMAND ""
@@ -32,23 +26,18 @@ ExternalProject_Add(mpv
         --buildtype=release
         --default-library=shared
         --prefer-static
+        -Dgpl=false
         -Db_lto=true
         -Db_ndebug=true
         -Dlibmpv=true
         -Dpdf-build=enabled
         -Dlua=enabled
         -Djavascript=enabled
-        -Dsdl2=enabled
         -Dlibarchive=enabled
-        -Dlibbluray=enabled
-        -Ddvdnav=enabled
-        -Duchardet=enabled
-        -Drubberband=enabled
         -Dlcms2=enabled
         -Dopenal=enabled
         -Dspirv-cross=enabled
         -Dvulkan=enabled
-        -Dvapoursynth=enabled
         -Degl-angle=enabled
     BUILD_COMMAND ${EXEC} ninja -C <BINARY_DIR>
     INSTALL_COMMAND ""
