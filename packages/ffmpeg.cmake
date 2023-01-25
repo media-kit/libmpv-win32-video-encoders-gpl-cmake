@@ -61,7 +61,7 @@ ExternalProject_Add(ffmpeg
         --enable-libsrt
         --enable-libvpl
         --enable-libjxl
-        --enable-dav1d
+        --enable-libdav1d
         --enable-cuda
         --enable-cuvid
         --enable-nvdec
