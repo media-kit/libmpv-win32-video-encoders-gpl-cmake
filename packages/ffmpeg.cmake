@@ -57,7 +57,6 @@ ExternalProject_Add(ffmpeg
         --enable-libbs2b
         --enable-libvpx
         --enable-libwebp
-        --enable-libaom
         --enable-libuavs3d
         --enable-libzimg
         --enable-libxml2
