@@ -1,16 +1,12 @@
 ExternalProject_Add(ffmpeg
-    DEPENDS
+        DEPENDS
         amf-headers
-        avisynth-headers
         nvcodec-headers
         bzip2
-        gmp
         lame
-        mbedtls
         libssh
         libsrt
         libass
-        libbluray
         libmodplug
         libpng
         libsoxr
@@ -22,9 +18,6 @@ ExternalProject_Add(ffmpeg
         opus
         speex
         vorbis
-        x264
-        ${ffmpeg_x265}
-        xvidcore
         libxml2
         libvpl
         libopenmpt
@@ -35,14 +28,12 @@ ExternalProject_Add(ffmpeg
         libaribcaption
         rav1e
         dav1d
-        vapoursynth
         uavs3d
-        davs2
-    GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
-    SOURCE_DIR ${SOURCE_LOCATION}
-    GIT_CLONE_FLAGS "--filter=tree:0"
-    UPDATE_COMMAND ""
-    CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/configure
+        GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
+        SOURCE_DIR ${SOURCE_LOCATION}
+        GIT_CLONE_FLAGS "--filter=tree:0"
+        UPDATE_COMMAND ""
+        CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/configure
         --cross-prefix=${TARGET_ARCH}-
         --prefix=${MINGW_INSTALL_PREFIX}
         --arch=${TARGET_CPU}
@@ -51,15 +42,8 @@ ExternalProject_Add(ffmpeg
         --pkg-config-flags=--static
         --enable-cross-compile
         --enable-runtime-cpudetect
-        --enable-gpl
-        --enable-version3
-        --enable-nonfree
         --enable-postproc
-        --enable-avisynth
-        --enable-vapoursynth
-        --enable-gmp
         --enable-libass
-        --enable-libbluray
         --enable-libfreetype
         --enable-libfribidi
         --enable-libmodplug
@@ -72,25 +56,16 @@ ExternalProject_Add(ffmpeg
         --enable-libbs2b
         --enable-libvpx
         --enable-libwebp
-        --enable-libx264
-        --enable-libx265
-        --enable-librav1e
-        --enable-libdav1d
-        --enable-libdavs2
+        --enable-libaom
         --enable-libuavs3d
-        --enable-libxvid
         --enable-libzimg
-        --enable-mbedtls
         --enable-libxml2
         --enable-libmysofa
         --enable-libssh
         --enable-libsrt
         --enable-libvpl
         --enable-libjxl
-        --enable-libplacebo
-        --enable-libshaderc
-        --enable-libzvbi
-        --enable-libaribcaption
+        --enable-libdav1d
         --enable-cuda
         --enable-cuvid
         --enable-nvdec
@@ -101,9 +76,9 @@ ExternalProject_Add(ffmpeg
         --disable-vdpau
         --disable-videotoolbox
         "--extra-libs='-lstdc++'" # needs by libjxl and shaderc
-    BUILD_COMMAND ${MAKE}
-    INSTALL_COMMAND ${MAKE} install
-    LOG_DOWNLOAD 1 LOG_UPDATE 1 LOG_CONFIGURE 1 LOG_BUILD 1 LOG_INSTALL 1
+        BUILD_COMMAND ${MAKE}
+        INSTALL_COMMAND ${MAKE} install
+        LOG_DOWNLOAD 1 LOG_UPDATE 1 LOG_CONFIGURE 1 LOG_BUILD 1 LOG_INSTALL 1
 )
 
 force_rebuild_git(ffmpeg)
