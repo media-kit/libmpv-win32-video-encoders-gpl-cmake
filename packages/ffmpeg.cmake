@@ -22,6 +22,7 @@ ExternalProject_Add(ffmpeg
         libvpl
         libopenmpt
         libjxl
+        mbedtls
         shaderc
         libplacebo
         libzvbi
@@ -71,11 +72,30 @@ ExternalProject_Add(ffmpeg
         --enable-nvdec
         --enable-nvenc
         --enable-amf
+        
+        # Disable muxers, encoders & filters since we are only targeting playback.
+
+        --disable-muxers
+        --disable-encoders
+        --disable-filters
+ 
+        # Enable overlay & equalizer audio filters.
+
+        --enable-filter=overlay
+	--enable-filter=equalizer
+
+        # HTTPS support.
+        
+        --enable-version3
+        --enable-mbedtls
+        
+        # Disable few more things.
+        
         --disable-doc
         --disable-vaapi
         --disable-vdpau
         --disable-videotoolbox
-        "--extra-libs='-lstdc++'" # needs by libjxl and shaderc
+        "--extra-libs='-lstdc++'" # Needed by libjxl and shaderc.
         BUILD_COMMAND ${MAKE}
         INSTALL_COMMAND ${MAKE} install
         LOG_DOWNLOAD 1 LOG_UPDATE 1 LOG_CONFIGURE 1 LOG_BUILD 1 LOG_INSTALL 1
