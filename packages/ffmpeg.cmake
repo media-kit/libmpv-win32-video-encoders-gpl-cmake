@@ -22,14 +22,10 @@ ExternalProject_Add(ffmpeg
         libvpl
         libopenmpt
         libjxl
-        mbedtls
-        shaderc
-        libplacebo
-        libzvbi
-        libaribcaption
-        rav1e
+        aom
         dav1d
         uavs3d
+	mbedtls
         GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
         SOURCE_DIR ${SOURCE_LOCATION}
         GIT_CLONE_FLAGS "--filter=tree:0"
@@ -57,6 +53,7 @@ ExternalProject_Add(ffmpeg
         --enable-libbs2b
         --enable-libvpx
         --enable-libwebp
+        --enable-libaom
         --enable-libuavs3d
         --enable-libzimg
         --enable-libxml2
@@ -65,17 +62,14 @@ ExternalProject_Add(ffmpeg
         --enable-libsrt
         --enable-libvpl
         --enable-libjxl
-	--enable-librav1e
         --enable-libdav1d
-	--enable-libplacebo
-        --enable-libshaderc
-        --enable-libzvbi
-        --enable-libaribcaption
         --enable-cuda
         --enable-cuvid
         --enable-nvdec
         --enable-nvenc
         --enable-amf
+        --disable-doc
+        --disable-decoder=libaom_av1
         
         # Disable muxers, encoders & filters since we are only targeting playback.
 
@@ -92,13 +86,7 @@ ExternalProject_Add(ffmpeg
         
         --enable-version3
         --enable-mbedtls
-        
-        # Disable few more things.
-        
-        --disable-doc
-        --disable-vaapi
-        --disable-vdpau
-        --disable-videotoolbox
+
         "--extra-libs='-lstdc++'" # Needed by libjxl and shaderc.
         BUILD_COMMAND ${MAKE}
         INSTALL_COMMAND ${MAKE} install
