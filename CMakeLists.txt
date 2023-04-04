@@ -14,6 +14,8 @@ if(NOT CMAKE_GENERATOR STREQUAL "Ninja")
     message(WARNING "Generator “${CMAKE_GENERATOR}” is unsupported!\nTry Ninja if you encounter problems.")
 endif()
 
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--error-output")
+
 set(TARGET_ARCH "x86_64-w64-mingw32" CACHE STRING "The target architecture for this toolchain.")
 string(REGEX MATCH "^[^-]+" TARGET_CPU ${TARGET_ARCH})
 
