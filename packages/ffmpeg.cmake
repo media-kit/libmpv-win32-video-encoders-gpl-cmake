@@ -86,6 +86,13 @@ ExternalProject_Add(ffmpeg
         
         --enable-version3
         --enable-mbedtls
+	
+	# Disable few more things.
+	
+	--disable-doc
+        --disable-vaapi
+        --disable-vdpau
+        --disable-videotoolbox
 
         "--extra-libs='-lstdc++'" # Needed by libjxl and shaderc.
         BUILD_COMMAND ${MAKE}
