@@ -1,8 +1,10 @@
 set_property(DIRECTORY PROPERTY EP_STEP_TARGETS download)
 list(APPEND ep
+    gmp
     xz
     lzo
     uchardet
+    rubberband
     zlib
     bzip2
     libjpeg
@@ -14,7 +16,14 @@ list(APPEND ep
     speex
     libmodplug
     libvpx
+    xvidcore
+    game-music-emu
     libpng
+    x264
+    x265
+    libdvdcss
+    libdvdread
+    libdvdnav
     libiconv
     luajit
     openal-soft
@@ -24,6 +33,7 @@ list(APPEND ep
     libarchive
     freetype2
     libudfread
+    libbluray
     harfbuzz
     libsoxr
     graphengine
@@ -35,11 +45,13 @@ list(APPEND ep
     libxml2
     libvpl
     amf-headers
+    avisynth-headers
     nvcodec-headers
     libmysofa
     aom
     dav1d
     libwebp
+    vapoursynth
     libbs2b
     libssh
     libsdl2
@@ -49,6 +61,7 @@ list(APPEND ep
     highway
     libjxl
     uavs3d
+    davs2
     angle-headers
     mujs
     spirv-headers
@@ -83,22 +96,18 @@ list(APPEND ep
     libsodium
     megasdk
 )
-
 foreach(package IN LISTS ep)
     if(NOT ${SINGLE_SOURCE_LOCATION} STREQUAL "")
         set(SOURCE_LOCATION "${SINGLE_SOURCE_LOCATION}/${package}")
     endif()
-
     include(${CMAKE_CURRENT_SOURCE_DIR}/${package}.cmake)
     set(SOURCE_LOCATION "")
 
     get_property(_git_repository TARGET ${package} PROPERTY _EP_GIT_REPOSITORY)
-
     if(_git_repository)
         list(APPEND repo ${package})
     endif()
 endforeach()
-
 list(LENGTH ep ep_length)
 message(STATUS "Parsing ${ep_length} packages")
 
