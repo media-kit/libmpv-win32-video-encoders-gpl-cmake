@@ -21,22 +21,15 @@ ExternalProject_Add(mpv-release
         lcms2
         libarchive
         libass
-        libdvdnav
-        libdvdread
-        libiconv
         libjpeg
         libpng
         luajit
-        rubberband
         uchardet
-        openal-soft
         mujs
         vulkan
         shaderc
         libplacebo
         spirv-cross
-        vapoursynth
-        libsdl2
     URL ${LINK}
     SOURCE_DIR ${SOURCE_LOCATION}
     CONFIGURE_COMMAND ${EXEC} meson <BINARY_DIR> <SOURCE_DIR>
@@ -46,23 +39,20 @@ ExternalProject_Add(mpv-release
         --buildtype=release
         --default-library=shared
         --prefer-static
+        -Dc_link_args=-Wl,--gc-sections
+        -Dcpp_link_args=-Wl,--gc-sections
+        -Dgpl=false
         -Db_lto=true
         -Db_ndebug=true
         -Dlibmpv=true
         -Dpdf-build=enabled
         -Dlua=enabled
         -Djavascript=enabled
-        -Dsdl2=enabled
-        -Dlibarchive=enabled
-        -Dlibbluray=enabled
-        -Ddvdnav=enabled
         -Duchardet=enabled
-        -Drubberband=enabled
         -Dlcms2=enabled
-        -Dopenal=enabled
+        -Dopenal=disabled
         -Dspirv-cross=enabled
         -Dvulkan=enabled
-        -Dvapoursynth=enabled
         -Degl-angle=enabled
     BUILD_COMMAND ${EXEC} ninja -C <BINARY_DIR>
     INSTALL_COMMAND ""
@@ -92,7 +82,6 @@ ExternalProject_Add_Step(mpv-release copy-binary
     COMMAND ${CMAKE_COMMAND} -E copy <BINARY_DIR>/mpv.exe                           ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/mpv.exe
     COMMAND ${CMAKE_COMMAND} -E copy <BINARY_DIR>/generated/mpv.com                 ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/mpv.com
     COMMAND ${CMAKE_COMMAND} -E copy <BINARY_DIR>/mpv.pdf                           ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/doc/manual.pdf
-    COMMAND ${CMAKE_COMMAND} -E copy ${MINGW_INSTALL_PREFIX}/etc/fonts/fonts.conf   ${CMAKE_CURRENT_BINARY_DIR}/mpv-package/mpv/fonts.conf
     COMMENT "Copying mpv binaries and manual"
 )
 
