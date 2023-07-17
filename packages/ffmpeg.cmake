@@ -92,9 +92,9 @@ ExternalProject_Add(ffmpeg
         --enable-optimizations
         --enable-runtime-cpudetect
 
-        --enable-version3
-
         --enable-mbedtls
+
+        --enable-libjxl
 
         --enable-libvpl
         --enable-libbs2b
