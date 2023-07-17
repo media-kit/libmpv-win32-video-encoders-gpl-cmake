@@ -41,7 +41,7 @@ ExternalProject_Add(ffmpeg
         --disable-gpl
         --disable-nonfree
         --enable-version3
-        --disable-static
+        --enable-static
         --disable-vulkan
         --disable-iconv
 
