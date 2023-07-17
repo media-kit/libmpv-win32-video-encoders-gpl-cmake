@@ -42,8 +42,10 @@ ExternalProject_Add(ffmpeg
         --disable-nonfree
         --enable-version3
         --enable-static
+        --disable-shared
         --disable-vulkan
         --disable-iconv
+        --enable-stripping
 
         --disable-muxers
         --disable-decoders
@@ -59,7 +61,6 @@ ExternalProject_Add(ffmpeg
         --disable-swscale-alpha
 
         --enable-bsfs
-        --enable-stripping
 
         --enable-amf
         --enable-cuda
@@ -87,7 +88,6 @@ ExternalProject_Add(ffmpeg
         --disable-bsf=eac3_core
 
         --enable-small
-        --enable-shared
         --enable-hwaccels
         --enable-optimizations
         --enable-runtime-cpudetect
