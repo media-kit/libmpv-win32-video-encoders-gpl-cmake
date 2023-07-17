@@ -75,7 +75,7 @@ ExternalProject_Add(ffmpeg
         --disable-bzlib
         --disable-libmfx
         --disable-libuavs3d
-        --disable-ffnvcodec
+        --enable-ffnvcodec
         --disable-linux-perf
         --disable-videotoolbox
         --disable-audiotoolbox
