@@ -53,6 +53,7 @@ ExternalProject_Add(mpv-release
         -Dopenal=disabled
         -Dspirv-cross=enabled
         -Dvulkan=enabled
+        -Dlibplacebo=disabled
         -Degl-angle=enabled
     BUILD_COMMAND ${EXEC} ninja -C <BINARY_DIR>
     INSTALL_COMMAND ""
