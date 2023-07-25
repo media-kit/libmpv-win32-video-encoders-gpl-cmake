@@ -25,7 +25,6 @@ list(APPEND ep
     libdvdread
     libdvdnav
     libiconv
-    luajit
     openal-soft
     fribidi
     expat

@@ -23,7 +23,6 @@ ExternalProject_Add(mpv-release
         libass
         libjpeg
         libpng
-        luajit
         uchardet
         mujs
         vulkan
@@ -46,7 +45,7 @@ ExternalProject_Add(mpv-release
         -Db_ndebug=true
         -Dlibmpv=true
         -Dpdf-build=enabled
-        -Dlua=enabled
+        -Dlua=disabled
         -Djavascript=enabled
         -Duchardet=enabled
         -Dlcms2=enabled
