@@ -21,7 +21,6 @@ ExternalProject_Add(ffmpeg
         libjxl
         libxml2
         shaderc
-        libplacebo
         libaribcaption
         dav1d
         mbedtls
@@ -104,7 +103,6 @@ ExternalProject_Add(ffmpeg
         --enable-libsoxr
         --enable-libspeex
         --enable-libmysofa
-        --enable-libplacebo
         --enable-libshaderc
         --enable-libfribidi
         --enable-libfreetype

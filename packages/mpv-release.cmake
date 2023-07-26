@@ -26,7 +26,6 @@ ExternalProject_Add(mpv-release
         uchardet
         mujs
         shaderc
-        libplacebo
         spirv-cross
     URL ${LINK}
     SOURCE_DIR ${SOURCE_LOCATION}

@@ -11,7 +11,6 @@ ExternalProject_Add(mpv
         uchardet
         mujs
         shaderc
-        libplacebo
         spirv-cross
     GIT_REPOSITORY https://github.com/mpv-player/mpv.git
     SOURCE_DIR ${SOURCE_LOCATION}

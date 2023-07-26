@@ -71,7 +71,6 @@ list(APPEND ep
     glad
     libdovi
     rav1e
-    libplacebo
     libva
     libzvbi
     libaribcaption
