@@ -21,7 +21,6 @@ ExternalProject_Add(ffmpeg
         libjxl
         libxml2
         shaderc
-        libaribcaption
         dav1d
         mbedtls
         GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
@@ -106,7 +105,6 @@ ExternalProject_Add(ffmpeg
         --enable-libshaderc
         --enable-libfribidi
         --enable-libfreetype
-        --enable-libaribcaption
 
         --enable-avutil
         --enable-avcodec

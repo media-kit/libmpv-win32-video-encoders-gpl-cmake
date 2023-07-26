@@ -73,7 +73,6 @@ list(APPEND ep
     rav1e
     libva
     libzvbi
-    libaribcaption
     libsixel
     ffmpeg
     mpv
