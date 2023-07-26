@@ -25,7 +25,6 @@ ExternalProject_Add(mpv-release
         libpng
         uchardet
         mujs
-        vulkan
         shaderc
         libplacebo
         spirv-cross
@@ -51,7 +50,7 @@ ExternalProject_Add(mpv-release
         -Dlcms2=enabled
         -Dopenal=disabled
         -Dspirv-cross=enabled
-        -Dvulkan=enabled
+        -Dvulkan=disabled
         -Dlibplacebo=disabled
         -Degl-angle=enabled
     BUILD_COMMAND ${EXEC} ninja -C <BINARY_DIR>

@@ -10,7 +10,6 @@ ExternalProject_Add(mpv
         libpng
         uchardet
         mujs
-        vulkan
         shaderc
         libplacebo
         spirv-cross
