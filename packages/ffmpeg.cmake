@@ -26,7 +26,7 @@ ExternalProject_Add(ffmpeg
         mbedtls
         GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
         SOURCE_DIR ${SOURCE_LOCATION}
-        GIT_CLONE_FLAGS "--filter=tree:0"
+        GIT_TAG ea3d24bbe3c58b171e55fe2151fc7ffaca3ab3d2
         UPDATE_COMMAND ""
         CONFIGURE_COMMAND ${EXEC} <SOURCE_DIR>/configure
         --cross-prefix=${TARGET_ARCH}-
