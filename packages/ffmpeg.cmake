@@ -92,6 +92,8 @@ ExternalProject_Add(ffmpeg
 
         --enable-mbedtls
 
+        --enable-libdav1d
+
         --enable-libjxl
 
         --enable-libvpl
