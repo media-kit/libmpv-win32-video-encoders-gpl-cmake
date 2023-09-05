@@ -135,7 +135,7 @@ ExternalProject_Add(ffmpeg
         --enable-decoder=libdav1d
         --enable-decoder=theora
         --enable-decoder=msmpeg*
-        --enable-decoder=mjpeg
+        --enable-decoder=mjpeg*
         --enable-decoder=wmv*
 
         --enable-decoder=aac*
@@ -203,7 +203,7 @@ ExternalProject_Add(ffmpeg
         --enable-demuxer=hevc
         --enable-demuxer=rtsp
         --enable-demuxer=mpeg4
-        --enable-demuxer=mjpeg
+        --enable-demuxer=mjpeg*
         --enable-demuxer=avi
         --enable-demuxer=av1
         --enable-demuxer=matroska
