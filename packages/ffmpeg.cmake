@@ -23,6 +23,8 @@ ExternalProject_Add(ffmpeg
         shaderc
         dav1d
         mbedtls
+        x264
+        libvpx
         GIT_REPOSITORY https://github.com/FFmpeg/FFmpeg.git
         SOURCE_DIR ${SOURCE_LOCATION}
         GIT_TAG ea3d24bbe3c58b171e55fe2151fc7ffaca3ab3d2
@@ -37,7 +39,7 @@ ExternalProject_Add(ffmpeg
         --pkg-config-flags=--static
         --enable-cross-compile
 
-        --disable-gpl
+        --enable-gpl
         --disable-nonfree
         --enable-version3
         --enable-static
@@ -46,13 +48,13 @@ ExternalProject_Add(ffmpeg
         --disable-iconv
         --enable-stripping
 
-        --disable-muxers
-        --disable-decoders
-        --disable-encoders
-        --disable-demuxers
-        --disable-parsers
-        --disable-protocols
-        --disable-filters
+        --enable-muxers
+        --enable-decoders
+        --enable-encoders
+        --enable-demuxers
+        --enable-parsers
+        --enable-protocols
+        --enable-filters
         --disable-doc
         --disable-postproc
         --disable-programs
@@ -92,6 +94,10 @@ ExternalProject_Add(ffmpeg
         --enable-runtime-cpudetect
 
         --enable-mbedtls
+
+        --enable-libvpx
+        --enable-libx264
+        --enable-libvorbis
 
         --enable-libdav1d
 
