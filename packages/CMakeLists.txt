@@ -75,6 +75,7 @@ list(APPEND ep
     libzvbi
     libsixel
     ffmpeg
+    fftools-ffi
     mpv
     mpv-release
     mpv-packaging
