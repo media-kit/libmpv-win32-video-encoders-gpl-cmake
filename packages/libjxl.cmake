@@ -22,6 +22,7 @@ ExternalProject_Add(libjxl
     COMMAND bash -c "ln -s ${src_libjpeg} <SOURCE_DIR>/third_party/libjpeg-turbo"
     COMMAND ${EXEC} cmake -H<SOURCE_DIR> -B<BINARY_DIR>
         -DCMAKE_INSTALL_PREFIX=${MINGW_INSTALL_PREFIX}
+	-DSHARE_INSTALL_PREFIX=${MINGW_INSTALL_PREFIX}
         -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE}
         -DBUILD_SHARED_LIBS=OFF
         -DCMAKE_BUILD_TYPE=Release
