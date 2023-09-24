@@ -162,6 +162,7 @@ ExternalProject_Add(ffmpeg
         --enable-decoder=wma*
         --enable-decoder=pcm*
         --enable-decoder=dsd*
+        --enable-decoder=dca
 
         --enable-decoder=ssa
         --enable-decoder=ass
@@ -236,6 +237,8 @@ ExternalProject_Add(ffmpeg
         --enable-demuxer=dsf
         --enable-demuxer=dts
         --enable-demuxer=truehd
+        --enable-demuxer=dts
+        --enable-demuxer=dtshd
 
         --enable-demuxer=ass
         --enable-demuxer=srt
@@ -255,12 +258,12 @@ ExternalProject_Add(ffmpeg
         --enable-parser=aac*
         --enable-parser=ac3
         --enable-parser=cook
-        --enable-parser=dca
         --enable-parser=flac
         --enable-parser=gsm
         --enable-parser=mpegaudio
         --enable-parser=tak
         --enable-parser=vorbis
+        --enable-parser=dca
 
         --enable-filter=overlay
         --enable-filter=equalizer
