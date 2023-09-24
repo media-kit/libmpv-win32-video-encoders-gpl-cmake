@@ -235,7 +235,6 @@ ExternalProject_Add(ffmpeg
         --enable-demuxer=wv
         --enable-demuxer=xwma
         --enable-demuxer=dsf
-        --enable-demuxer=dts
         --enable-demuxer=truehd
         --enable-demuxer=dts
         --enable-demuxer=dtshd
