@@ -1,38 +1,19 @@
 diff --git a/meson.build b/meson.build
-index ce1fce2..6049156 100644
+index a56bb1f37c..f238d57c3f 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -23,6 +23,9 @@ libavutil = dependency('libavutil', version: '>= 56.70.100')
- libswresample = dependency('libswresample', version: '>= 3.9.100')
- libswscale = dependency('libswscale', version: '>= 5.9.100')
+@@ -1736,6 +1736,11 @@ major = client_h_define.split('|')[0].split('<<')[0].strip('() ')
+ minor = client_h_define.split('|')[1].strip('() ')
+ client_api_version = major + '.' + minor + '.0'
  
-+# fftools-ffi
++## fftools-ffi hack
 +libfftools_ffi = dependency('fftools-ffi')
++dependencies += libfftools_ffi
++sources += 'fftools-ffi.c'
 +
- libass = dependency('libass', version: '>= 0.12.2')
- pthreads = dependency('threads')
- 
-@@ -35,7 +38,8 @@ dependencies = [libass,
-                 libavutil,
-                 libswresample,
-                 libswscale,
--                pthreads]
-+                pthreads,
-+                libfftools_ffi]
- 
- # Keeps track of all enabled/disabled features
- features = {
-@@ -246,7 +250,10 @@ sources = files(
-     ## tree_allocator
-     'ta/ta.c',
-     'ta/ta_talloc.c',
--    'ta/ta_utils.c'
-+    'ta/ta_utils.c',
-+
-+    ## fftools-ffi hack
-+    'fftools-ffi.c'
- )
- 
+ libmpv = library('mpv', sources, dependencies: dependencies, gnu_symbol_visibility: 'hidden',
+                  link_args: cc.get_supported_link_arguments(['-Wl,-Bsymbolic']),
+                  version: client_api_version, include_directories: includedir,
  
 diff --git a/fftools-ffi.c b/fftools-ffi.c
 new file mode 100644
