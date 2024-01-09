@@ -14,6 +14,7 @@ ExternalProject_Add(mpv
         spirv-cross
         fftools-ffi
     GIT_REPOSITORY https://github.com/mpv-player/mpv.git
+    GIT_TAG 78d43740f52db817d98bcf24fb30a76ab6fa13ff
     SOURCE_DIR ${SOURCE_LOCATION}
     PATCH_COMMAND ${EXEC} git apply ${CMAKE_CURRENT_SOURCE_DIR}/mpv-*.patch
     UPDATE_COMMAND ""
